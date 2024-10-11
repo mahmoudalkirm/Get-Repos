@@ -23,6 +23,7 @@ function render_pre_repos() {
     repos_con.innerHTML = ''
     window.innerWidth >= 1200 ? c = 4 : c = 3;
     window.innerWidth < 991 ? c = 2 : null;
+    window.innerWidth < 600 ? c = 1 : null;
     for (let i = 0; i < c; i++) {
         let pre_repo = document.createElement('div');
         pre_repo.classList += 'repo';
