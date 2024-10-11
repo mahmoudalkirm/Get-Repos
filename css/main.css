@@ -1,0 +1,218 @@
+:root{
+    --main-color: rgb(113, 181, 201);
+    --sec-color: rgba(128, 128, 128, 0.086);
+}
+/* container */
+    @media (min-width: 768px){
+        .container {
+           width: 750px;
+        }
+    }
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        } 
+    }
+    @media (min-width: 1200px) {
+        .container {
+            width: 1180px;
+        } 
+    }
+    .container{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    i{
+        cursor: pointer;
+    }
+ul{
+    list-style-type: none;
+}
+.logo{
+    font-size: 30px;
+    padding-left: 10px;
+}
+.socail{
+    display: flex;
+    font-size: 24px;
+}
+.socail li{
+    margin-right: 20px;
+}
+header{
+    display: flex;   
+     align-items: center;
+     justify-content: space-between;
+}
+.sec1{
+    display: flex;
+    justify-content: center;
+}
+.config{
+    display: flex;
+    width: fit-content;
+}
+.config p{
+    display: inline-flex;
+   border-right: 3px solid;
+   overflow: hidden;
+   width: 100%;
+   white-space: nowrap;
+   animation: 4s typing steps(22),
+              cursor 1s  infinite; 
+   padding: 0 10px;
+   font-size: 30px;
+}
+
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    
+}
+@keyframes cursor{
+    from{
+      border-color: transparent;
+    }
+}
+/* ############################ */
+.repos{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px, 1fr));
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.repo{
+    height: 180px;
+    background-color: rgba(128, 128, 128, 0.086);
+
+    border-radius:14px;
+    animation: 2s repo_ani infinite linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     cursor: pointer;
+    transition: 0.5s transform;
+
+}
+.repo p{
+    text-overflow: ellipsis;
+    white-space: nowrap;    
+    overflow: hidden;
+}
+.repo div {
+    padding-left: 10px;
+}
+.repo div div{
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+.repo >div{
+    width: 100px;
+}
+.repo div div:after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 8px;
+    background-color: #fff;
+    
+    top: calc(50% - 2px);
+    left: 130px;
+
+    border-radius: 4px;
+}
+.repo div div::before{
+    content: '';
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 130px;
+    width: attr(rate);
+
+    background-color: red;
+    
+}
+@keyframes repo_ani {
+    to{
+    background-color: rgba(128, 128, 128, 0.04);
+
+    }
+}
+.white{
+    color: #fff;
+}
+.repo p{
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+.repo:hover{
+    transform: translateY(-4px);
+}
+@media (max-width: 499px){
+    .repo{
+        margin: 0 40px;
+    }
+}
+footer p{
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+.search_con{
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    
+    border-radius: 40px;
+    background: var(--sec-color);
+}
+.search_con form{
+    display: flex;
+    
+}
+.search_con form input{
+    width: 70%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 50px;
+
+    font-size: 20px;
+    position:relative;
+    display: block;
+}
+.search_con form input::placeholder{
+    color: #777
+}
+.search_con form input:focus::placeholder{
+    color: #fff;
+    transition: 0.3s;
+}
+.search_con form button{
+    flex-grow: 1;
+    border-radius: 20px;
+    border: none;
+
+    color: #fff;
+
+    background-color: var(--main-color);
+    margin-left: 10px;
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+.search_con form button:hover{
+    --main-color: rgb(113, 180, 221);
+    transition: 0.3s;
+    
+}
